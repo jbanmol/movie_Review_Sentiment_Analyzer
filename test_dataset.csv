@@ -1,0 +1,43 @@
+review,movie_title,true_sentiment
+"This movie was absolutely incredible! The cinematography was breathtaking and the acting was superb. I couldn't take my eyes off the screen.",Cinematic Masterpiece,Positive
+"One of the worst movies I've ever seen. The plot made no sense and the acting was terrible. Complete waste of time and money.",Disaster Film,Negative
+"The movie was okay I guess. Some parts were good but others felt really slow. Not the best but not the worst either.",Average Joe,Neutral
+"Mind-blowing special effects and an amazing storyline! This film will keep you on the edge of your seat from start to finish.",Action Spectacular,Positive
+"Boring beyond belief. I actually fell asleep halfway through. The dialogue was cringe-worthy and the pacing was awful.",Sleepy Time,Negative
+"A decent film with good moments. The lead actor did well but the supporting cast was mediocre. Worth watching once.",Decent Watch,Neutral
+"Brilliant directing and outstanding performances from the entire cast. This movie deserves all the awards it can get!",Award Winner,Positive
+"Terrible script and poor execution. Even great actors couldn't save this mess of a movie. Avoid at all costs.",Epic Fail,Negative
+"The movie has its ups and downs. Some scenes are really well done while others feel rushed. Mixed feelings overall.",Mixed Bag,Neutral
+"A true masterpiece of cinema! Every frame is carefully crafted and the emotional depth is incredible. Absolutely phenomenal!",True Art,Positive
+"Painfully slow and unnecessarily long. The story could have been told in half the time. Very disappointing.",Time Waster,Negative
+"Standard Hollywood fare. Nothing groundbreaking but entertaining enough for a weekend watch. Predictable but competent.",Weekend Flick,Neutral
+"Stunning visuals and powerful storytelling combine to create something truly special. This film will stay with you long after the credits roll.",Visual Poetry,Positive
+"Confusing plot and wooden acting throughout. I kept checking my watch hoping it would end soon. Really quite awful.",Confusing Mess,Negative
+"A solid effort that hits all the right notes without being exceptional. Good production values and decent performances.",Solid Effort,Neutral
+"Incredible character development and emotional resonance. The director has created something beautiful and meaningful here.",Character Study,Positive
+"Clichéd storyline with predictable twists. Felt like I'd seen this exact movie a dozen times before. Very unoriginal.",Same Old Story,Negative
+"The film works on some levels but fails on others. Great cinematography but weak dialogue. A mixed experience overall.",Mixed Results,Neutral
+"Pure entertainment gold! Funny, exciting, and heartwarming all at once. Perfect for the whole family to enjoy together.",Family Fun,Positive
+"Pretentious and self-indulgent. The director clearly thinks they're making art but it's just boring and incomprehensible.",Pretentious Art,Negative
+"Competently made with good technical aspects. The story is familiar but told well enough to keep you engaged throughout.",Competent Work,Neutral
+"A tour de force of filmmaking! Every element comes together perfectly to create an unforgettable cinematic experience.",Tour de Force,Positive
+"Juvenile humor and poor writing drag down what could have been a decent concept. Feels like it was written by teenagers.",Juvenile Effort,Negative
+"The movie serves its purpose as light entertainment. Not memorable but not offensive either. Perfectly adequate viewing.",Light Entertainment,Neutral
+"Absolutely gripping from the first scene to the last! The tension never lets up and the performances are pitch-perfect.",Gripping Thriller,Positive
+"Incoherent mess with no clear direction. Seems like the filmmakers had no idea what story they were trying to tell.",Incoherent Mess,Negative
+"A pleasant enough way to spend two hours. Some good laughs and nice moments but nothing that will stick with you.",Pleasant Viewing,Neutral
+"Revolutionary filmmaking that pushes the boundaries of what cinema can achieve. This will be studied in film schools for years.",Revolutionary Work,Positive
+"Derivative and uninspired. Borrows heavily from better films without adding anything new or interesting to the formula.",Derivative Work,Negative
+"The film has charm and heart even if it's not technically perfect. Sometimes good intentions and sincerity matter most.",Charming Effort,Neutral
+"An emotional powerhouse that will leave you in tears. Incredible performances and a story that really resonates with the human experience.",Emotional Journey,Positive
+"Trying way too hard to be clever and funny. The jokes fall flat and the story gets lost in its own attempts at wit.",Trying Too Hard,Negative
+"A workmanlike effort that gets the job done. Professional filmmaking without any real spark or inspiration behind it.",Workmanlike Job,Neutral
+"Transcendent cinema that elevates the medium to high art. Every moment is crafted with precision and filled with meaning.",Transcendent Art,Positive
+"Aggressively mediocre in every possible way. Not bad enough to be memorable but not good enough to be worth your time.",Aggressive Mediocrity,Negative
+"The film accomplishes what it sets out to do reasonably well. No major complaints but no particular enthusiasm either.",Reasonable Success,Neutral
+"A joyful celebration of life and human connection. Uplifting and inspiring without being saccharine or manipulative.",Joyful Celebration,Positive
+"Misguided from start to finish. Good actors wasted on a script that doesn't know what it wants to be.",Misguided Effort,Negative
+"Adequate entertainment that neither offends nor excites. Competent but forgettable filmmaking that fills time reasonably well.",Adequate Time-Filler,Neutral
+"Breathtaking artistry and profound storytelling create a film that's both beautiful and meaningful. Simply extraordinary!",Extraordinary Beauty,Positive
+"Painful to watch and even more painful to think about afterwards. A complete failure on every level imaginable.",Complete Failure,Negative
+"The movie does what it needs to do without any particular flair. Standard genre fare that meets basic expectations.",Standard Fare,Neutral
