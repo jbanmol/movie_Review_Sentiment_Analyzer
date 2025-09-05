@@ -325,110 +325,74 @@ st.markdown("""
     .mode-badge.strict { background-color: #1e3a8a; color: #60a5fa; border: 1px solid #3b82f6; }
     .mode-badge.lenient { background-color: #16a34a; color: #86efac; border: 1px solid #22c55e; }
 
-    /* Checkbox styling */
-    .stCheckbox { display: flex !important; justify-content: flex-end !important; margin-bottom: 1rem !important; }
-    .stCheckbox > div { display: flex !important; justify-content: flex-end !important; }
-    .stCheckbox > div > label {
+    /* Clean Toggle Switch Styling */
+    [data-testid="stToggle"] {
+        display: flex !important;
+        justify-content: flex-end !important;
+        align-items: center !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    [data-testid="stToggle"] > div {
+        display: flex !important;
+        justify-content: flex-end !important;
+        align-items: center !important;
+        width: 100% !important;
+    }
+    
+    [data-testid="stToggle"] label {
         color: #ffffff !important;
         font-size: 12px !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: flex-end !important;
-    }
-
-    .toggle-container {
-        display: flex !important;
-        justify-content: flex-end !important;
-        align-items: flex-start !important;
-        padding-top: 8px !important;
-        min-height: 42px !important;
+        order: 1 !important;
+        margin-right: 8px !important;
     }
     
-    .stCheckbox input[type="checkbox"] {
-        appearance: none !important;
+    /* Toggle switch container */
+    [data-testid="stToggle"] [role="switch"] {
+        order: 2 !important;
         background-color: #333333 !important;
-        border: 1px solid #666666 !important;
-        border-radius: 4px !important;
-        width: 16px !important;
-        height: 16px !important;
-        margin-right: 8px !important;
+        border: 2px solid #666666 !important;
+        border-radius: 12px !important;
+        width: 48px !important;
+        height: 24px !important;
         position: relative !important;
         cursor: pointer !important;
+        transition: all 0.2s ease !important;
+        box-sizing: border-box !important;
     }
-    .stCheckbox input[type="checkbox"]:checked {
+    
+    /* Toggle switch knob */
+    [data-testid="stToggle"] [role="switch"] > div {
         background-color: #ffffff !important;
-        border-color: #ffffff !important;
-    }
-    .stCheckbox input[type="checkbox"]:checked::after {
-        content: "✓" !important;
+        border-radius: 50% !important;
+        width: 18px !important;
+        height: 18px !important;
         position: absolute !important;
-        top: -2px !important;
-        left: 2px !important;
-        font-size: 12px !important;
-        color: #000000 !important;
-        font-weight: bold !important;
-    }
-    .stCheckbox input[type="checkbox"]:focus {
-        outline: none !important;
-        box-shadow: 0 0 0 2px rgba(255,255,255,0.3) !important;
-    }
-
-    /* Toggle switch styling */
-    .stApp [data-testid="stToggle"] > div > div,
-    .stApp [data-testid="stToggle"] > div > div > div,
-    .stApp [data-testid="stToggle"] [role="switch"],
-    .stApp [data-testid="stToggle"] [data-baseweb="checkbox"],
-    .stApp [data-testid="stToggle"] input[type="checkbox"] + div,
-    .stApp div[data-testid="stToggle"] > div > div,
-    .stApp div[data-testid="stToggle"] [role="switch"] {
-        border-color: #666666 !important;
-        background-color: #333333 !important;
-        background: #333333 !important;
+        top: 1px !important;
+        left: 1px !important;
+        transition: transform 0.2s ease !important;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.3) !important;
+        box-sizing: border-box !important;
     }
     
-    /* Toggle switch focus states */
-    .stApp [data-testid="stToggle"] > div > div:focus,
-    .stApp [data-testid="stToggle"] > div > div:focus-visible,
-    .stApp [data-testid="stToggle"] [role="switch"]:focus,
-    .stApp [data-testid="stToggle"] [role="switch"]:focus-visible,
-    .stApp [data-testid="stToggle"] [data-baseweb="checkbox"]:focus,
-    .stApp [data-testid="stToggle"] [data-baseweb="checkbox"]:focus-visible {
-        border-color: #ffffff !important;
-        outline: none !important;
-        box-shadow: 0 0 0 2px rgba(255,255,255,0.3) !important;
-        background-color: #333333 !important;
-        background: #333333 !important;
-    }
-    
-    /* Toggle switch ACTIVE/CHECKED state - MAXIMUM SPECIFICITY */
-    .stApp [data-testid="stToggle"] [role="switch"][aria-checked="true"],
-    .stApp [data-testid="stToggle"] [data-baseweb="checkbox"][aria-checked="true"],
-    .stApp [data-testid="stToggle"] input[type="checkbox"]:checked + div,
-    .stApp div[data-testid="stToggle"] [role="switch"][aria-checked="true"],
-    .stApp div[data-testid="stToggle"] input[type="checkbox"]:checked + div {
+    /* Toggle switch checked state */
+    [data-testid="stToggle"] [role="switch"][aria-checked="true"] {
         background-color: #ffffff !important;
-        background: #ffffff !important;
         border-color: #ffffff !important;
     }
     
-    /* Toggle switch inner circle/knob */
-    .stApp [data-testid="stToggle"] [role="switch"][aria-checked="true"] > div,
-    .stApp [data-testid="stToggle"] [data-baseweb="checkbox"][aria-checked="true"] > div,
-    .stApp [data-testid="stToggle"] input[type="checkbox"]:checked + div > div {
+    /* Toggle switch checked knob position - knob reaches right edge */
+    [data-testid="stToggle"] [role="switch"][aria-checked="true"] > div {
         background-color: #000000 !important;
-        background: #000000 !important;
+        transform: translateX(24px) !important;
     }
     
-    /* Toggle switch checked focus states */
-    .stApp [data-testid="stToggle"] [role="switch"][aria-checked="true"]:focus,
-    .stApp [data-testid="stToggle"] [role="switch"][aria-checked="true"]:focus-visible,
-    .stApp [data-testid="stToggle"] [data-baseweb="checkbox"][aria-checked="true"]:focus,
-    .stApp [data-testid="stToggle"] [data-baseweb="checkbox"][aria-checked="true"]:focus-visible,
-    .stApp [data-testid="stToggle"] input[type="checkbox"]:checked:focus + div {
-        background-color: #ffffff !important;
-        background: #ffffff !important;
-        border-color: #ffffff !important;
-        box-shadow: 0 0 0 2px rgba(255,255,255,0.4) !important;
+    /* Toggle switch focus state */
+    [data-testid="stToggle"] [role="switch"]:focus {
+        outline: none !important;
+        box-shadow: 0 0 0 2px rgba(255,255,255,0.3) !important;
     }
     .try-example-button > button {
     background-color: transparent !important;   /* remove fill */
@@ -469,49 +433,6 @@ st.markdown("""
     box-shadow: 0 0 0 2px rgba(255,255,255,0.6) !important;
     }
 
-    /* Toggle styling fixes */
-    html body .stApp [data-testid="stToggle"] {
-        background-color: transparent !important;
-    }
-    
-    html body .stApp [data-testid="stToggle"] > div > div {
-        background-color: #333333 !important;
-        border: 1px solid #666666 !important;
-    }
-    
-    html body .stApp [data-testid="stToggle"] [aria-checked="true"] > div {
-        background-color: #ffffff !important;
-        border-color: #ffffff !important;
-    }
-    
-    html body .stApp [data-testid="stToggle"] > div > div > div {
-        background-color: #ffffff !important;
-        border: none !important;
-    }
-    
-    html body .stApp [data-testid="stToggle"] label {
-        color: #ffffff !important;
-        font-size: 12px !important;
-        white-space: nowrap !important;
-        display: flex !important;
-        align-items: center !important;
-        min-width: fit-content !important;
-        flex-shrink: 0 !important;
-    }
-    
-    html body .stApp [data-testid="stToggle"] {
-        min-width: 120px !important;
-        display: flex !important;
-        justify-content: flex-end !important;
-    }
-    
-    html body .stApp [data-testid="stToggle"] > div {
-        white-space: nowrap !important;
-        min-width: fit-content !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: flex-end !important;
-    }
     
     html body .stApp [data-baseweb="tab"]:focus,
     html body .stApp [data-baseweb="tab"]:focus-visible,
@@ -562,15 +483,6 @@ st.markdown("""
         box-shadow: 0 0 0 2px rgba(255,255,255,0.3) !important;
     }
     
-    [data-testid*="stToggle"] * {
-        border-color: #666666 !important;
-    }
-    [data-testid*="stToggle"] *:focus,
-    [data-testid*="stToggle"] *:focus-visible,
-    [data-testid*="stToggle"] *:active {
-        border-color: #ffffff !important;
-        outline: none !important;
-    }
     
     .stApp *:focus,
     .stApp *:focus-visible {
@@ -584,15 +496,6 @@ st.markdown("""
         border-color: #ffffff !important;
     }
     
-    [data-testid="stToggle"] [data-baseweb="checkbox"]:checked {
-        background-color: #ffffff !important;
-        border-color: #ffffff !important;
-    }
-    [data-testid="stToggle"] [data-baseweb="checkbox"]:checked:focus {
-        background-color: #ffffff !important;
-        border-color: #ffffff !important;
-        box-shadow: 0 0 0 2px rgba(255,255,255,0.3) !important;
-    }
     
     :root {
         --colors-primary: #ffffff !important;
@@ -646,235 +549,58 @@ st.markdown("""
         outline: none !important;
     }
     
-    html body .stApp [data-testid="stToggle"] [role="switch"][aria-checked="true"],
-    html body .stApp [data-testid="stToggle"] [data-baseweb="checkbox"][aria-checked="true"],
-    html body .stApp [data-testid="stToggle"] input[type="checkbox"]:checked + div {
-        background-color: #ffffff !important;
-        background: #ffffff !important;
-        border-color: #ffffff !important;
-        border: 2px solid #ffffff !important;
-    }
     
     [data-baseweb*="tab"]:focus {
         border-bottom: none !important;
         box-shadow: none !important;
     }
     
-    [data-testid="stToggle"] * {
-        transition: none !important;
+    /* Reduce spacing between mode selector and form elements */
+    .stTabs [data-baseweb="tab-panel"] > div > div:first-child + .stForm {
+        margin-top: -1rem !important;
     }
-    [data-testid="stToggle"] [aria-checked="true"] {
-        background: #ffffff !important;
-        border-color: #ffffff !important;
+    
+    /* Reduce spacing between mode selector and file uploader */
+    .stTabs [data-baseweb="tab-panel"] > div > div:first-child + div .stFileUploader {
+        margin-top: -1rem !important;
+    }
+    
+    /* Alternative approach - target any element following the mode selector columns */
+    .stTabs [data-baseweb="tab-panel"] > div > div:first-child + * {
+        margin-top: -0.75rem !important;
     }
 
 </style>
 
 <script>
-// AGGRESSIVE JavaScript solution to override BaseWeb inline styles
-function debugAndFixStyles() {
-    console.log('🎬 Applying AGGRESSIVE style fixes for BaseWeb components...');
-    
-    function applyButtonStyles() {
-        document.querySelectorAll('button').forEach(btn => {
-            if (btn.innerText.includes('Try Example')) {
-                btn.parentElement.classList.add('try-example-button');
-            }
-            if (btn.innerText.includes('Analyze Sentiment')) {
-                btn.parentElement.classList.add('analyze-button');
-            }
-        });
-    }
-    
-    function aggressiveTabStyleOverride() {
-        const tabs = document.querySelectorAll('[data-baseweb="tab"]');
-        console.log(`🔍 AGGRESSIVE: Found ${tabs.length} tab elements`);
-        
-        tabs.forEach((tab, index) => {
-            // Override ALL possible style properties with extreme force
-            const styleProps = [
-                'border', 'border-top', 'border-bottom', 'border-left', 'border-right',
-                'border-color', 'border-top-color', 'border-bottom-color', 
-                'border-left-color', 'border-right-color',
-                'box-shadow', 'outline', 'background-image', 'background'
-            ];
-            
-            styleProps.forEach(prop => {
-                if (prop.includes('border')) {
-                    tab.style.setProperty(prop, 'none', 'important');
-                } else {
-                    tab.style.setProperty(prop, 'none', 'important');
-                }
-            });
-            
-            // Force transparent borders specifically
-            tab.style.setProperty('border-bottom', '2px solid transparent', 'important');
-            
-            // Override BaseWeb's CSS-in-JS by directly modifying inline styles
-            if (tab.style.borderBottomColor && tab.style.borderBottomColor.includes('rgb(255, 75, 75)')) {
-                console.log(`🚨 DETECTED: Red border on tab "${tab.textContent.trim()}" - OVERRIDING`);
-                tab.style.borderBottomColor = 'transparent';
-                tab.style.borderColor = 'transparent';
-            }
-            
-            // Force all pseudo-elements to be transparent
-            const computedStyle = window.getComputedStyle(tab, '::before');
-            const computedStyleAfter = window.getComputedStyle(tab, '::after');
-            
-            // Create a style element to override pseudo-elements
-            const pseudoOverride = document.createElement('style');
-            pseudoOverride.textContent = `
-                [data-baseweb="tab"]:nth-child(${index + 1})::before,
-                [data-baseweb="tab"]:nth-child(${index + 1})::after {
-                    display: none !important;
-                    border: none !important;
-                    background: none !important;
-                }
-            `;
-            if (!document.head.querySelector(`style[data-tab-override="${index}"]`)) {
-                pseudoOverride.setAttribute('data-tab-override', index);
-                document.head.appendChild(pseudoOverride);
-            }
-        });
-    }
-    
-    function aggressiveCheckboxStyleOverride() {
-        const checkboxes = document.querySelectorAll('.stCheckbox input[type="checkbox"]');
-        console.log(`🔍 AGGRESSIVE: Found ${checkboxes.length} checkbox elements`);
-        
-        checkboxes.forEach((checkbox, index) => {
-            // Override any red focus states
-            checkbox.addEventListener('focus', () => {
-                checkbox.style.setProperty('box-shadow', '0 0 0 2px rgba(255,255,255,0.3)', 'important');
-                checkbox.style.setProperty('border-color', '#ffffff', 'important');
-            });
-            
-            checkbox.addEventListener('blur', () => {
-                checkbox.style.setProperty('box-shadow', 'none', 'important');
-                checkbox.style.setProperty('border-color', checkbox.checked ? '#ffffff' : '#666666', 'important');
-            });
-        });
-    }
-    
-    function forceInlineStyleOverrides() {
-        // Create a continuous override for any elements with red colors
-        const redColorPattern = /rgb\\(255,\\s*75,\\s*75\\)/g;
-        const redBorderPattern = /rgb\\(255,\\s*75,\\s*75\\)/g;
-        
-        document.querySelectorAll('*').forEach(el => {
-            if (el.style.backgroundColor && redColorPattern.test(el.style.backgroundColor)) {
-                console.log('🚨 REMOVING red background from element:', el);
-                el.style.setProperty('background-color', '#333333', 'important');
-            }
-            if (el.style.borderColor && redBorderPattern.test(el.style.borderColor)) {
-                console.log('🚨 REMOVING red border from element:', el);
-                el.style.setProperty('border-color', 'transparent', 'important');
-            }
-            if (el.style.borderBottomColor && redBorderPattern.test(el.style.borderBottomColor)) {
-                console.log('🚨 REMOVING red bottom border from element:', el);
-                el.style.setProperty('border-bottom-color', 'transparent', 'important');
-            }
-        });
-    }
-    
-    function addAggressiveEventListeners() {
-        // Intercept ALL focus and click events on tabs
-        document.addEventListener('focusin', (e) => {
-            if (e.target.matches('[data-baseweb="tab"]')) {
-                console.log('🎯 Tab focused - applying aggressive override');
-                setTimeout(aggressiveTabStyleOverride, 1);
-                setTimeout(forceInlineStyleOverrides, 10);
-            }
-        });
-        
-        document.addEventListener('click', (e) => {
-            if (e.target.matches('[data-baseweb="tab"]') || e.target.closest('[data-baseweb="tab"]')) {
-                console.log('🎯 Tab clicked - applying aggressive override');
-                setTimeout(aggressiveTabStyleOverride, 1);
-                setTimeout(forceInlineStyleOverrides, 10);
-                setTimeout(aggressiveTabStyleOverride, 50);
-                setTimeout(forceInlineStyleOverrides, 100);
-            }
-        });
-        
-        // Checkbox event listeners
-        document.addEventListener('change', (e) => {
-            if (e.target.matches('.stCheckbox input[type="checkbox"]')) {
-                console.log('🎯 Checkbox changed - applying styles');
-                setTimeout(aggressiveCheckboxStyleOverride, 1);
-            }
-        });
-    }
-    
-    // Initial application with multiple passes
-    applyButtonStyles();
-    aggressiveTabStyleOverride();
-    aggressiveCheckboxStyleOverride();
-    forceInlineStyleOverrides();
-    addAggressiveEventListeners();
-    
-    // Ultra-aggressive MutationObserver
-    const observer = new MutationObserver((mutations) => {
-        let needsUpdate = false;
-        mutations.forEach(mutation => {
-            if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
-                const el = mutation.target;
-                if (el.matches('[data-baseweb="tab"]') || el.matches('.stCheckbox input')) {
-                    needsUpdate = true;
-                }
-            }
-            if (mutation.type === 'childList') {
-                mutation.addedNodes.forEach(node => {
-                    if (node.nodeType === 1) { // Element node
-                        if (node.matches('[data-baseweb="tab"]') || node.querySelector('[data-baseweb="tab"]')) {
-                            needsUpdate = true;
-                        }
-                    }
-                });
-            }
-        });
-        
-        if (needsUpdate) {
-            console.log('🔄 AGGRESSIVE: DOM changes detected - reapplying overrides');
-            setTimeout(() => {
-                aggressiveTabStyleOverride();
-                aggressiveCheckboxStyleOverride();
-                forceInlineStyleOverrides();
-            }, 1);
+// Simple JavaScript to add button styling classes
+function applyButtonStyles() {
+    document.querySelectorAll('button').forEach(btn => {
+        if (btn.innerText.includes('Try Example')) {
+            btn.parentElement.classList.add('try-example-button');
+        }
+        if (btn.innerText.includes('Analyze Sentiment')) {
+            btn.parentElement.classList.add('analyze-button');
         }
     });
-    
-    observer.observe(document.body, { 
-        childList: true, 
-        subtree: true, 
-        attributes: true,
-        attributeFilter: ['style', 'class', 'aria-selected', 'aria-checked']
-    });
-    
-    // Continuous monitoring every 100ms for the first 5 seconds
-    let monitorCount = 0;
-    const continuousMonitor = setInterval(() => {
-        forceInlineStyleOverrides();
-        aggressiveTabStyleOverride();
-        monitorCount++;
-        if (monitorCount > 50) { // Stop after 5 seconds
-            clearInterval(continuousMonitor);
-            console.log('🏁 Continuous monitoring completed');
-        }
-    }, 100);
 }
 
-// Apply multiple times with different delays to catch all rendering stages
-setTimeout(debugAndFixStyles, 100);
-setTimeout(debugAndFixStyles, 500);
-setTimeout(debugAndFixStyles, 1000);
+// Apply button styles when page loads
+setTimeout(applyButtonStyles, 100);
+setTimeout(applyButtonStyles, 500);
 
-// Also apply when page is fully loaded
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', debugAndFixStyles);
+    document.addEventListener('DOMContentLoaded', applyButtonStyles);
 } else {
-    debugAndFixStyles();
+    applyButtonStyles();
 }
+
+// Simple observer to reapply button styles when buttons are added
+const observer = new MutationObserver(() => {
+    applyButtonStyles();
+});
+
+observer.observe(document.body, { childList: true, subtree: true });
 </script>
 """, unsafe_allow_html=True)
 
@@ -918,81 +644,52 @@ def display_sentiment_result(result, analysis_mode=None):
 
 def render_analysis_mode_selector(key_suffix=""):
     """Create the toggle switch for choosing strict vs normal analysis."""
-    # Layout depends on where this toggle is being used
+    # Use Streamlit's native column system for reliable positioning
     if key_suffix in ["_single", "_batch"]:
-        # Put explanation on left, toggle on right
-        col1, col2 = st.columns([4, 1], vertical_alignment="center")
-        
-        with col1:
-            st.markdown("""
-            <div style="margin: 0; text-align: left; width: 100%;">
-              <p style="color:#b0b0b0; font-size:9px !important; line-height:1.2; margin:0; text-align: left; width: 100%; padding-right: 8px;">
-                <strong style="color:#ffffff;">STRICT MODE:</strong> Conservative analysis defaults ambiguous text to Neutral, while Normal mode detects subtler sentiment cues.
-              </p>
-            </div>
-            """, unsafe_allow_html=True)
-        
-        with col2:
-            # Position toggle on the right side
-            st.markdown('<div style="display: flex; justify-content: flex-end; align-items: center; width: 100%; margin-left: auto;">', unsafe_allow_html=True)
-            strict_mode = st.toggle(
-                "Strict Mode",
-                value=False,
-                key=f"strict_mode_toggle{key_suffix}",
-                help="Strict: Only flags clear sentiment. Normal: Accepts subtle cues.",
-                label_visibility="collapsed"
-            )
-            st.markdown('</div>', unsafe_allow_html=True)
-            
-    elif key_suffix == "_global":
-        # Compact layout for global toggle
-        col1, col2 = st.columns([2, 1], vertical_alignment="center")
-        
-        with col1:
-            st.markdown("""
-            <div style="margin: 0;">
-              <p style="color:#b0b0b0; font-size:7px !important; line-height:1.1; margin:0; white-space: nowrap;">
-                <strong style="color:#ffffff;">Strict Mode:</strong> Conservative analysis vs Normal (detects subtle cues)
-              </p>
-            </div>
-            """, unsafe_allow_html=True)
-        
-        with col2:
-            # Right-aligned toggle for compact view
-            st.markdown('<div style="display: flex; justify-content: flex-end; align-items: center; width: 100%; padding-right: 0;">', unsafe_allow_html=True)
-            strict_mode = st.toggle(
-                "Strict Mode",
-                value=False,
-                key=f"strict_mode_toggle{key_suffix}",
-                help="Strict: Only flags clear sentiment. Normal: Accepts subtle cues.",
-                label_visibility="collapsed"
-            )
-            st.markdown('</div>', unsafe_allow_html=True)
-            
+        text_content = """<span style="color:#ffffff; font-weight:bold;">STRICT MODE:</span> <span style="color:#b0b0b0;">Conservative analysis defaults ambiguous text to Neutral, while Normal mode detects subtler sentiment cues.</span>"""
+        font_size = "8px"
     else:
-        # Default layout when used inside tabs
-        left, right = st.columns([2, 3], vertical_alignment="center")
-
-        with left:
-            st.markdown("""
-            <div style="margin: 0;">
-              <p style="color:#b0b0b0; font-size:11px !important; line-height:1.4; margin:0;">
-                <strong style="color:#ffffff;">Strict Mode:</strong> Only flags clear, strong sentiment and defaults borderline text to Neutral, while Normal mode accepts subtler cues as Positive/Negative.
-              </p>
-            </div>
-            """, unsafe_allow_html=True)
-
-        with right:
-            # Standard toggle placement
-            st.markdown("<div style='display:flex; justify-content:flex-end; align-items:center; width: 100%;'>", unsafe_allow_html=True)
-            strict_mode = st.toggle(
-                "Strict Mode",
-                value=False,
-                key=f"strict_mode_toggle{key_suffix}",
-                label_visibility="collapsed"
-            )
-            st.markdown("</div>", unsafe_allow_html=True)
-
+        text_content = """<span style="color:#ffffff; font-weight:bold;">Strict Mode:</span> <span style="color:#b0b0b0;">Only flags clear, strong sentiment and defaults borderline text to Neutral, while Normal mode accepts subtler cues as Positive/Negative.</span>"""
+        font_size = "10px"
+    
+    # Use columns with extreme right positioning - much wider left column to push toggle to extreme right
+    col1, col2 = st.columns([16, 1], vertical_alignment="center")
+    
+    with col1:
+        # Wrap text in a flex container for vertical centering
+        st.markdown(f"""
+        <div style="display: flex; align-items: center; height: 100%; min-height: 24px;">
+            <p style="color:#b0b0b0; font-size:{font_size} !important; line-height:1.3; margin:0; padding:0; word-wrap: break-word; overflow-wrap: break-word; white-space: normal; overflow: visible; flex: 1;">
+                {text_content}
+            </p>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    with col2:
+        # Container positioned at EXTREME RIGHT edge
+        st.markdown("""
+        <div style="
+            width: 100%; 
+            display: flex; 
+            align-items: center; 
+            height: 100%; 
+            min-height: 24px; 
+            justify-content: flex-end;
+            margin: 0;
+            padding: 0;
+        ">
+        """, unsafe_allow_html=True)
+        
+        # No additional margin - toggle should be flush right
+        strict_mode = st.toggle(
+            "Strict Mode",
+            value=False,
+            key=f"strict_mode_toggle{key_suffix}",
+            help="Strict: Only flags clear sentiment. Normal: Accepts subtle cues.",
+            label_visibility="collapsed"
+        )
+        st.markdown('</div>', unsafe_allow_html=True)
+    
     return "strict" if strict_mode else "lenient"
 
 
@@ -1144,8 +841,10 @@ def main():
 
                     # Combine original data with analysis results
                     results_df = df.copy()
-                    for key in results.keys():
-                        results_df[key] = [r[key] for r in results]
+                    if results:  # Make sure we have results before processing
+                        # Get the keys from the first result dictionary
+                        for key in results[0].keys():
+                            results_df[key] = [r[key] for r in results]
 
                     # Clean up progress indicators and show success
                     progress_bar.empty()
@@ -1183,6 +882,5 @@ def main():
                 st.error(f"Error processing file: {str(e)}")
                 st.info("Please make sure your CSV file is properly formatted with a 'review' column.")
 
-# Run the app when this file is executed
 if __name__ == "__main__":
     main()
